@@ -1,0 +1,10 @@
+
+Alpha, Alpha, 0
+Alpha, Beta, -1
+Alpha, Gamma, -1
+Beta, Alpha, 1
+Beta, Beta, 0
+Beta, Gamma, -1
+Gamma, Alpha, 1
+Gamma, Beta, 1
+Gamma, Gamma, 0

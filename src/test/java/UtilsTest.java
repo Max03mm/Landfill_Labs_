@@ -1,6 +1,9 @@
 import models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +54,17 @@ class UtilsTest {
     void findHighestGenerations() {
     }
 
-    @Test
-    void compareGenerations() {
+    @ParameterizedTest
+    @CsvFileSource(resources = "/resources/generationComparison.csv")
+    void compareGenerations(String gen1, String gen2, int expected) {
+
+        int result = Utils.compareGenerations(gen1, gen2);
+
+        // Assert that the result matches the expected output
+        assertEquals(expected, result);
     }
+
+
 
     @Test
     void findLeastYearsActive() {
